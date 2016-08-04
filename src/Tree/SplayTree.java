@@ -1,7 +1,7 @@
 package Tree;
 
-
 /**
+ * 拓展树SplayTree
  *@author Kaiscript
  *
  *2016年7月27日下午8:39:56
@@ -10,7 +10,6 @@ public class SplayTree<T extends Comparable<T>> {
 	
 	public STNode<T> mRoot;
 	
-
 	public static class STNode<T>{
 		private T value;
 		private STNode<T> left;
@@ -80,7 +79,7 @@ public class SplayTree<T extends Comparable<T>> {
 					attachAsRChild(gp, v);
 				}
 			}
-			
+			//双层拓展，故向上移动，拿到父节点，祖父节点
 			p = v.parent;
 			if(p!=null){
 				g = p.parent;
@@ -88,7 +87,7 @@ public class SplayTree<T extends Comparable<T>> {
 			v.parent = null;
 		}
 		
-		
+		//父节点不为空，但祖父节点为空的情况也就是当树的高度只有奇数的时候，再进行一次单旋操作
 		if(p!=null){
 			if(p.left == v){
 				attachAsLChild(p, v.right);
@@ -100,13 +99,37 @@ public class SplayTree<T extends Comparable<T>> {
 			}
 		}
 		
-		v.parent = null;
+		v.parent = null; //v已经拓展完毕，是根节点，parent为null
 		mRoot = v;
 		return v;
 		
 	}
 	
-	public void insert(T t){
+	/**
+	 * 查找某节点,包括了拓展操作
+	 * @param t
+	 * @return
+	 */
+	public STNode<T> search(T t){
+		
+		STNode<T> x = mRoot;
+		STNode<T> y = null;
+		
+		while(x!=null){
+			y = x;
+			int cmp = t.compareTo(x.value);
+			if(cmp>0)
+				x = x.right;
+			else if(cmp<0)
+				x = x.left;
+			else
+				break;
+		}
+		splay(x);
+		return y;
+	}
+	
+	public void insertWithoutSplay(T t){
 		STNode<T> node = new STNode<T>(t,null,null,null);
 		insert(this,node);
 	}
@@ -191,11 +214,16 @@ public class SplayTree<T extends Comparable<T>> {
 		int arr[] = {10,50,40,30,20,60};
 		SplayTree<Integer> tree = new SplayTree<>();
 		for(int i:arr){
-			tree.insert(i);
+			tree.insertWithoutSplay(i);
 		}
+		System.out.println("mRoot value:"+tree.mRoot.value);
 		tree.inOrder();
-		tree.splay(tree.minium(tree.mRoot.right));
-		tree.inOrder();
+
+//		tree.splay(tree.minium(tree.mRoot.right));
+		System.out.println();
+		tree.search(20);//include splay
+		System.out.println("mRoot value:"+tree.mRoot.value);
+
 	}
 
 }

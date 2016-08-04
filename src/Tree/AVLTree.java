@@ -1,10 +1,14 @@
 package Tree;
+
+import java.util.Properties;
+
 /**
  *@author Kaiscript
  *
  *2016年7月25日下午7:51:47
  */
 public class AVLTree<T extends Comparable<T>> {
+	
 	
 	private AVLNode<T> mRoot;
 	
