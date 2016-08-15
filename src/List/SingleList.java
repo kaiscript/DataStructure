@@ -124,7 +124,7 @@ public class SingleList<T> {
 	
 	public static void main(String[] args){
 		SingleList<String> list = new SingleList<>();
-		for(int i=0;i<15;i++){
+		for(int i=0;i<3;i++){
 			list.append("00"+i);
 		}
 		System.out.println("---list---");
