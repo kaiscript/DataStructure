@@ -10,7 +10,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
 	private BSNode<T> mRoot;
 	
-	public class BSNode<T>{
+	public static class BSNode<T>{
 		T key;
 		private BSNode<T> left;
 		private BSNode<T> right;
@@ -167,7 +167,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	 * @param tree
 	 * @param node
 	 */
-	public void insert(BinarySearchTree<T> tree,BSNode<T> node){
+	public BSNode<T> insert(BinarySearchTree<T> tree,BSNode<T> node){
 		int cmp;
 		BSNode<T> y = null;
 		BSNode<T> x = tree.mRoot;
@@ -189,14 +189,14 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			else
 				y.right = node;
 		}
-		
+		return node;
 	}
 	
-	public void insert(T t){
+	public BSNode<T> insert(T t){
 		BSNode<T> z=new BSNode<T>(t,null,null,null);
 		if(z!=null)
-			insert(this,z);
-		
+			return insert(this,z);
+		return null;
 	}
 	
 	/**
@@ -225,8 +225,9 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	}
 	
 	public static void main(String[] args) {
-		int[] arr = {1,5,4,3,2,6};
+		int[] arr = {10,5,1,15,12,11};
 		BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+		BSNode<Integer> node = null; 
 		for(Integer a:arr){
 			tree.insert(a);
 		}

@@ -1,6 +1,5 @@
 package Tree;
 
-import java.util.Properties;
 
 /**
  *@author Kaiscript

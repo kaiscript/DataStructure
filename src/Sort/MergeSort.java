@@ -1,5 +1,6 @@
 package Sort;
 /**
+ * 归并排序
  * 遍历所有元素需要O(n),归并是二叉树,树高度logN,故复杂度为O(N*logN)
  *@author Kaiscript
  *
