@@ -46,31 +46,6 @@ public class MergeSort {
 		merge(a, start, mid, end);
 	}
 	
-	public static void mergeGroup(int[] a,int len,int gap){
-		int i;
-		
-		for(i=0;i+2*gap-1<len;i+=2*gap){
-			merge(a, i, i+gap-1, i+2*gap-1);
-		}
-		
-		if(i+gap-1<len-1){
-			merge(a, i, i+gap-1, len-1);
-		}
-	}
-	
-	/**
-	 * 自底向上归并
-	 * @param a
-	 */
-	public static void mergeSortDown2Up(int[] a){
-		if(a==null)
-			return;
-		
-		for(int n=1;n<a.length;n*=2){
-			mergeGroup(a, a.length, n);
-		}
-		
-	}
 	
 	public static void main(String[] args) {
 		int a[] = {80,30,60,40,20,10,50,70};

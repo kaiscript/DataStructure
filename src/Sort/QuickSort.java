@@ -22,7 +22,7 @@ public class QuickSort {
 				if(i<j)
 					a[i++] = a[j];
 				
-				while(i<j && a[i]<x)
+				while(i<j && a[i]<=x)
 					i++;
 				if(i<j)
 					a[j--] = a[i];
