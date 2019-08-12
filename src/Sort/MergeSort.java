@@ -48,7 +48,7 @@ public class MergeSort {
 	
 	
 	public static void main(String[] args) {
-		int a[] = {80,30,60,40,20,10,50,70};
+		int a[] = {80,30,60,40,20,10,23,70};
 		mergeSort(a, 0, a.length-1);
 //		mergeSortDown2Up(a);
 		for(int i:a){

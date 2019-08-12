@@ -48,7 +48,7 @@ public class HeapSort {
 		a[i] = temp;
 	} 
 	
-	
+
 	public static void deleteTop(int[] a){
 		a[0] = Integer.MAX_VALUE;
 		swap(a,a.length-1,0);
@@ -71,12 +71,61 @@ public class HeapSort {
 		return temp;
 	}
 	
+	/**
+	 * 最大堆的向下调整
+	 * @param a
+	 * @param start 从i位置开始调整
+	 */
+	public static void maxHeapFixdown(int[] a,int start,int end){
+		int j = 2*start+1;
+		int temp = a[start];
+		while(j<end){
+			if(j<end && a[j]<a[j+1])//在左右孩子中选择较大的孩子 
+				j++;
+			if(temp<=a[j]){   //要交换的元素比孩子小，则将孩子的值移到父亲，然后移动指针
+				a[start] = a[j];
+				start = j;
+				j = 2*j+1;
+			}
+			else
+				break;
+			
+		}
+		a[start] = temp;//将调换的值放到正确的位置
+	}
+	
+	/**
+	 * 最大堆的升序排列
+	 * @param
+	 */
+	public static void heapSortAsc(int[] a){
+		int n = a.length;
+		for(int i = n/2-1;i>=0;i--) //从n/2-1 -->0开始往上调整，调整后其实就是一个最大堆//构造最大堆
+			maxHeapFixdown(a, i, n-1);
+		
+		for(int i=n-1;i>0;i--){
+			// 交换a[0]和a[i]。交换后，a[i]是a[0...i]中最大的。
+			int temp = a[0];
+			a[0] = a[i];
+			a[i] = temp;
+			// 调整a[0...i-1]，使得a[0...i-1]仍然是一个最大堆。
+			// 即，保证a[i-1]是a[0...i-1]中的最大值。
+			maxHeapFixdown(a, 0, i-1);
+		}
+		
+	}
+	
+	
 	public static void main(String[] args) {
+		int[] a1 = {12,54,4,67,143,56,324,87};
+		heapSortAsc(a1);
+		for(int i:a1)
+			System.out.print(i+" ");
+		System.out.println("--------");
 		int[] a = {40,10,30,15};
 		for(int i=a.length/2-1;i>=0;i--) //堆排序 O(N*logN)
 			minHeapFixdown(a,i);
 		//--
-		
 		
 		for(int i=0;i<a.length;i++)
 			System.out.print(a[i]+" ");
