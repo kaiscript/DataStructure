@@ -17,11 +17,11 @@ public class CountSort {
 	}
 	
 	public static void countSort(int[] a){
-		int[] temp = new int[a.length+1];
+		int[] temp = new int[a.length+1]; //r[]
 		int[] bucket = new int[getMax(a)+1];//取得最大值+1，保证bucket是够大的 
 		
 		for(int i=0;i<a.length;i++)
-			bucket[a[i]]++; //在数字对应的桶里数量加1
+			bucket[a[i]]++; //在数字对应的桶里数量加1   :c[]
 		
 		for(int i=1;i<bucket.length;i++){
 			bucket[i] += bucket[i-1]; //累加所有计数。更改过的计数数组就表示 每个元素在输出数组中的位置
