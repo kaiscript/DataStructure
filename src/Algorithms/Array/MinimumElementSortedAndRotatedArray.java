@@ -1,4 +1,4 @@
-package Array;
+package Algorithms.Array;
 
 /**
  * If you note that array is sorted and rotated. You need to find minimum element in above array in o(log n) time complexity.

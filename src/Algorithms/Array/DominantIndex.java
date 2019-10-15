@@ -1,4 +1,4 @@
-package Array;
+package Algorithms.Array;
 
 /**
  * 747. 至少是其他数字两倍的最大数

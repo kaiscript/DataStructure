@@ -1,4 +1,4 @@
-package Array;
+package Algorithms.Array;
 
 /**
  * Created by kaiscript on 2019/10/13.
