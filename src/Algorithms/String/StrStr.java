@@ -25,7 +25,33 @@ public class StrStr {
 
     public static void main(String[] args) {
 //        System.out.println(strStr("hello", "ll"));
-        System.out.println(strStr("mississippi", "issipi"));
+        System.out.println(strStr0("mississippi", "issi"));
+    }
+
+    public static int strStr0(String haystack, String needle) {
+        int l1 = haystack.length();
+        int l2 = needle.length();
+        if (l1 < l2) {
+            return -1;
+        } else if (l2 == 0) {
+            return 0;
+        }
+
+        for (int i = 0; i < l1; i++) {
+            if (i + l2 > l1) {
+                break;
+            }
+            for (int j = 0; j < l2; j++) {
+
+                if (haystack.charAt(i + j) != needle.charAt(j)) {
+                    break;
+                }
+                if (j == l2 - 1) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 
     public static int strStr(String haystack, String needle) {
