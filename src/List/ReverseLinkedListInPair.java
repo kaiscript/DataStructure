@@ -9,7 +9,7 @@ public class ReverseLinkedListInPair {
     private Node head;
 
     /**
-     * µü´ú·¨
+     * è¿­ä»£æ³•
      * @param head
      * @return
      */
@@ -36,7 +36,7 @@ public class ReverseLinkedListInPair {
     }
 
     /**
-     * µÝ¹é·¨
+     * é€’å½’æ³•
      * @param head
      * @return
      */

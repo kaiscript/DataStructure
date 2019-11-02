@@ -1,9 +1,9 @@
 package Algorithms.String;
 /**
- * °ÑÒ»¸ö0-1´®½øÐÐÅÅÐò£¬¿ÉÒÔÈÎÒâ½»»»Á½¸öÎ»ÖÃ£¬ÎÊ×îÉÙÐèÒª¶àÉÙ´Î½»»»
+ * æŠŠä¸€ä¸ª0-1ä¸²è¿›è¡ŒæŽ’åºï¼Œå¯ä»¥ä»»æ„äº¤æ¢ä¸¤ä¸ªä½ç½®ï¼Œé—®æœ€å°‘éœ€è¦å¤šå°‘æ¬¡äº¤æ¢
  *@author Kaiscript
  *
- *2016Äê8ÔÂ5ÈÕÏÂÎç10:31:44
+ *2016å¹´8æœˆ5æ—¥ä¸‹åˆ10:31:44
  */
 public class Overturn01String {
 	
