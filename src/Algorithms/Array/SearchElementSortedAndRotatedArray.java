@@ -1,6 +1,13 @@
 package Algorithms.Array;
 
 /**
+ * Question 18
+ * Problem:
+ * You are given an sorted and rotated array as below:
+ *
+ * int arr[]={16,19,21,25,3,5,8,10};
+ *
+ * If you note that array is sorted and rotated. You need to search an element in above array in o(log n) time complexity.
  * Created by kaiscript on 2019/10/6.
  */
 public class SearchElementSortedAndRotatedArray {

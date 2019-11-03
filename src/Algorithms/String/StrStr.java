@@ -24,8 +24,23 @@ package Algorithms.String;
 public class StrStr {
 
     public static void main(String[] args) {
-//        System.out.println(strStr("hello", "ll"));
         System.out.println(strStr0("mississippi", "issi"));
+    }
+
+    public int strStrSimple(String haystack, String needle) {
+        for (int i = 0;; i++) {
+            for (int j = 0;; j++) {
+                if (j == needle.length()) {
+                    return i;
+                }
+                if (i + j == haystack.length()) {
+                    return -1;
+                }
+                if (haystack.charAt(i + j) != needle.charAt(j)) {
+                    break;
+                }
+            }
+        }
     }
 
     public static int strStr0(String haystack, String needle) {
@@ -54,38 +69,5 @@ public class StrStr {
         return -1;
     }
 
-    public static int strStr(String haystack, String needle) {
-        int l2 = needle.length();
-        if (l2 == 0) {
-            return 0;
-        }
-        int l1 = haystack.length();
-        if (l1 < l2) {
-            return -1;
-        }
-        for (int i = 0; i < l1; i++) {
-            char c1 = haystack.charAt(i);
-            char c2 = needle.charAt(0);
-            if (c1 != c2) {
-                continue;
-            }
-
-            for (int j = 0; j < l2; j++) {
-                //子串不够长度可以父串剩下的长度来计算了
-                if (l1 - i < l2) {
-                    break;
-                }
-                char c3 = haystack.charAt(i + j);
-                char c4 = needle.charAt(j);
-                if (c3 != c4) {
-                    break;
-                }
-                if (j == l2 - 1) {
-                    return i;
-                }
-            }
-        }
-        return -1;
-    }
 
 }

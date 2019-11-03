@@ -43,4 +43,19 @@ public class PlusOne {
         }
     }
 
+    public int[] plusOne0(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; i--) {
+            //plus one
+            digits[i]++;
+            digits[i] %= 10;
+            if (digits[i] != 0) {
+                return digits;
+            }
+        }
+        //如果都是9的情况
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
+        return digits;
+    }
+
 }
