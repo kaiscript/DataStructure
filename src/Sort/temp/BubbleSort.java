@@ -1,10 +1,10 @@
 package Sort.temp;
 
 /**
- * Ã°ÅÆÅÅÐò¡£´ÓÍ·¿ªÊ¼±éÀú£¬±È½Ï2¸öÊý£¬½«´óµÄÍùºóÒÆ£¬±éÀúN¸öÊý¼´¿É°Ñ×î´óµÄÊý·ÅÔÚ×îºó¡£¹Ê±éÀúN´Î¼´¿ÉÍê³ÉÅÅÐò
- * Ê±¼ä¸´ÔÓ¶ÈO(n^2)
- * ÎÈ¶¨ÅÅÐò
- * Ô­µØÅÅÐò
+ * å†’ç‰ŒæŽ’åºã€‚ä»Žå¤´å¼€å§‹éåŽ†ï¼Œæ¯”è¾ƒ2ä¸ªæ•°ï¼Œå°†å¤§çš„å¾€åŽç§»ï¼ŒéåŽ†Nä¸ªæ•°å³å¯æŠŠæœ€å¤§çš„æ•°æ”¾åœ¨æœ€åŽã€‚æ•…éåŽ†Næ¬¡å³å¯å®ŒæˆæŽ’åº
+ * æ—¶é—´å¤æ‚åº¦O(n^2)
+ * ç¨³å®šæŽ’åº
+ * åŽŸåœ°æŽ’åº
  * Created by kaiscript on 2019/6/20.
  */
 public class BubbleSort {

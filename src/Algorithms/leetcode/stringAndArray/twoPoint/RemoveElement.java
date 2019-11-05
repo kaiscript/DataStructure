@@ -1,4 +1,4 @@
-package Algorithms.Array.twoPoint;
+package Algorithms.leetcode.stringAndArray.twoPoint;
 
 /**
  * Remove Element

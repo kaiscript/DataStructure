@@ -1,4 +1,4 @@
-package Algorithms.Array;
+package Algorithms.leetcode.stringAndArray;
 
 /**
  * 747. 至少是其他数字两倍的最大数

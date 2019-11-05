@@ -1,4 +1,4 @@
-package Algorithms.String;
+package Algorithms.leetcode.stringAndArray;
 
 /**
  * Given two binary strings, return their sum (also a binary string).
@@ -24,16 +24,16 @@ public class AddBinary {
     public static String addBinary(String a, String b) {
         int i = a.length() - 1;
         int j = b.length() - 1;
-        //±êÖ¾Î»
+        //ï¿½ï¿½Ö¾Î»
         int carry = 0;
         StringBuilder sb = new StringBuilder();
         int result = 0;
         while (i >= 0 || j >= 0 || carry == 1) {
             int abit = i >= 0 ? Character.getNumericValue(a.charAt(i--)) : 0;
             int bbit = j >= 0 ? Character.getNumericValue(b.charAt(j--)) : 0;
-            //Òì»òµÃµ½½á¹û
+            //ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½
             result = abit ^ bbit ^ carry;
-            //ÅĞ¶ÏÊÇ·ñĞèÒª½øÎ»
+            //ï¿½Ğ¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½Î»
             carry = (abit + bbit + carry) >= 2 ? 1 : 0;
             sb.append(result);
         }

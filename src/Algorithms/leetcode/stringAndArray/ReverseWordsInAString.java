@@ -1,4 +1,4 @@
-package Algorithms.String;
+package Algorithms.leetcode.stringAndArray;
 
 import java.util.ArrayList;
 import java.util.List;

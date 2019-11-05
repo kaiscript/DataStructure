@@ -1,4 +1,4 @@
-package Algorithms.String;
+package Algorithms.leetcode.stringAndArray;
 
 /**
  * Implement strStr().

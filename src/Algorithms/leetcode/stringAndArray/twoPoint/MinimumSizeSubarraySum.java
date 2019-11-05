@@ -1,4 +1,4 @@
-package Algorithms.Array.twoPoint;
+package Algorithms.leetcode.stringAndArray.twoPoint;
 
 /**
  * Given an array of n positive integers and a positive integer s,
