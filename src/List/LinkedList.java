@@ -76,7 +76,7 @@ public class LinkedList {
     public boolean checkPalindrome(Node head) {
         Node middleNode = findMiddleNode(head);
         Node secondNode = middleNode.next;
-        //µÚ¶şÌõÁ´±í£¨·´×ªºóµÄ£©µÄÍ·½áµã
+        //ç¬¬äºŒæ¡é“¾è¡¨ï¼ˆåè½¬åçš„ï¼‰çš„å¤´ç»“ç‚¹
         Node node = reverseLinkedListIterative(secondNode);
         while (head != null && node != null) {
             if (head.value == node.value) {
@@ -96,7 +96,7 @@ public class LinkedList {
         while (currentNode != null) {
             nextNode = currentNode.next;
             currentNode.next = previousNode;
-            //ÒÆ¶¯µ½ÏÂÒ»¸önode£¬ÔÙ½øĞĞµü´ú
+            //ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªnodeï¼Œå†è¿›è¡Œè¿­ä»£
             previousNode = currentNode;
             currentNode = nextNode;
         }
@@ -122,9 +122,9 @@ public class LinkedList {
         list.addToTheLast(new Node(1));
         list.addToTheLast(new Node(2));
         list.printList();
-        System.out.println("-----------Á´±íÄ©Î²ËãÆğµÄµÚ" + 1 + "¸ö½Úµã");
+        System.out.println("-----------é“¾è¡¨æœ«å°¾ç®—èµ·çš„ç¬¬" + 1 + "ä¸ªèŠ‚ç‚¹");
         System.out.println(list.findNthFromEndOfLinkedList(head, 1).value);
-        System.out.println("-----------ÅĞ¶ÏÊÇ·ñ»ØÎÄÁ´±í");
+        System.out.println("-----------åˆ¤æ–­æ˜¯å¦å›æ–‡é“¾è¡¨");
         LinkedList palindromeList = new LinkedList();
         Node palindromeHead=new Node(1);
         palindromeList.addToTheLast(palindromeHead);

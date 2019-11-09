@@ -1,10 +1,10 @@
 package List;
 
 /**
- * µ¥Á´±í(head²»´æÖµ£¬Ö»×÷ÒıÓÃ)
+ * å•é“¾è¡¨(headä¸å­˜å€¼ï¼Œåªä½œå¼•ç”¨)
  *@author Kaiscript
  *
- *2016Äê7ÔÂ17ÈÕÉÏÎç11:39:53
+ *2016å¹´7æœˆ17æ—¥ä¸Šåˆ11:39:53
  */
 public class SingleList<T> {
 	
@@ -86,7 +86,7 @@ public class SingleList<T> {
 	}
 	
 	/**
-	 * ·­×ªµ¥Á´±í(±éÀú)
+	 * ç¿»è½¬å•é“¾è¡¨(éå†)
 	 * @return
 	 */
 	public Node<T> reverseSingleList(){

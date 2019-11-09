@@ -2,7 +2,7 @@ package List;
 
 /**
  *
- * µ¥Á´±íÊµÏÖ
+ * å•é“¾è¡¨å®ç°
  * Created by kaiscript on 2019/10/5.
  */
 public class SinglyLinkedList {
@@ -11,7 +11,7 @@ public class SinglyLinkedList {
     private Node head;
 
     /**
-     * ÔÚÁ´±íÍ·²¿²åÈë
+     * åœ¨é“¾è¡¨å¤´éƒ¨æ’å…¥
      * @param data
      */
     public void insertFirst(int data) {
@@ -21,7 +21,7 @@ public class SinglyLinkedList {
     }
 
     /**
-     * É¾³ıÊ×½Úµã
+     * åˆ é™¤é¦–èŠ‚ç‚¹
      */
     public void deleteFirst() {
         Node first = head;
@@ -44,10 +44,10 @@ public class SinglyLinkedList {
         Node p = head;
         Node q = null;
         while (p != null && p.data != value) {
-            q = p;//¼ÇÂ¼Ç°Ò»¸ö½Úµã
+            q = p;//è®°å½•å‰ä¸€ä¸ªèŠ‚ç‚¹
             p = p.next;
         }
-        //valueÊÇÍ·½áµã
+        //valueæ˜¯å¤´ç»“ç‚¹
         if (q == null) {
             head.next = head.next.next;
         }
@@ -90,7 +90,7 @@ public class SinglyLinkedList {
 
 
     /**
-     * µü´ú·¨-·´×ªµ¥Á´±í
+     * è¿­ä»£æ³•-åè½¬å•é“¾è¡¨
      * @param currentNode
      * @return
      */
@@ -100,7 +100,7 @@ public class SinglyLinkedList {
         while (currentNode != null) {
             nextNode = currentNode.next;
             currentNode.next = previousNode;
-            //ÒÆ¶¯µ½ÏÂÒ»¸önode£¬ÔÙ½øĞĞµü´ú
+            //ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªnodeï¼Œå†è¿›è¡Œè¿­ä»£
             previousNode = currentNode;
             currentNode = nextNode;
         }
