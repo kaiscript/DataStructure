@@ -1,6 +1,7 @@
 package Algorithms.leetcode.linkedList;
 
 /**
+ * 328.
  * Given a singly linked list, group all odd nodes together followed by the even nodes. Please note here we are talking about the node number and not the value in the nodes.
  *
  * You should try to do it in place. The program should run in O(1) space complexity and O(nodes) time complexity.
@@ -24,27 +25,18 @@ public class OddEvenLinkedList {
         if (head == null || head.next == null) {
             return head;
         }
-        //奇数节点
-        ListNode oddNode = head;
-        ListNode evenNode = head.next;
-        ListNode connectNode = head.next;
-        int count = 2;//链表有多少个节点
-        while (evenNode.next != null) {
-            oddNode.next = evenNode.next;
-            //向前移动一个坐标
-            oddNode = evenNode;
-            evenNode = evenNode.next;
-            count++;
-            if (evenNode.next == null) {
-                oddNode.next = null;
-            }
-        }
-        if (count % 2 == 0) {
-            oddNode.next = connectNode;
-        }
-        else
-            evenNode.next = connectNode;
+        ListNode odd = head;
+        ListNode even = head.next;
+        ListNode evenHead = even;
+        while (even != null && even.next != null) {
+            odd.next = even.next;
+            odd = odd.next;
 
+            even.next = odd.next;
+            even = even.next;
+        }
+        //连接寄链和偶链
+        odd.next = evenHead;
         return head;
     }
 
