@@ -1,7 +1,8 @@
 package Algorithms.leetcode.linkedList;
 
 /**
- * 203.
+ * 203. Remove Linked List Elements
+ * Easy
  * Remove all elements from a linked list of integers that have value val.
  *
  * Example:
@@ -10,28 +11,23 @@ package Algorithms.leetcode.linkedList;
  * Output: 1->2->3->4->5
  */
 public class RemoveLinkedListElements {
-//1,2,2,1
+
+
     public ListNode removeElements(ListNode head, int val) {
-        if (head == null) {
-            return null;
+        //利用dummy记录改变后的链表节点位置，因为head可能被remove
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
+        ListNode cur = head;
+        while (cur != null) {
+            if (cur.val == val) {
+                pre.next = cur.next;
+            }
+            else
+                pre = cur;
+            cur = cur.next;
         }
-        ListNode pre = head;
-        ListNode node = head;
-        while (node != null) {
-            if (head.val == val) {
-                head = head.next;
-                node = node.next;
-                continue;
-            }
-            if (node.val == val) {
-                pre.next = node.next;
-            }
-            if (node.val != val) {
-                pre = node;
-            }
-            node = node.next;
-        }
-        return head;
+        return dummy.next;
     }
 
 

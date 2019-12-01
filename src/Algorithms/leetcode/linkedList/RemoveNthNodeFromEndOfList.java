@@ -1,6 +1,8 @@
 package Algorithms.leetcode.linkedList;
 
 /**
+ * 19. Remove Nth Node From End of List
+ * Medium
  * Given a linked list, remove the n-th node from the end of list and return its head.
  *
  * Example:
@@ -17,6 +19,25 @@ package Algorithms.leetcode.linkedList;
  * Could you do this in one pass?
  */
 public class RemoveNthNodeFromEndOfList {
+
+
+    public ListNode removeNthFromEnd0(ListNode head, int n) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode slow = dummy;
+        ListNode fast = dummy;
+        for (int i = 1; i <= n + 1; i++) {
+            fast = fast.next;
+        }
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return dummy.next;
+    }
+
+
 
     /**
      * 不考虑增加节点的情况下。快指针先走N，慢指针走L-N-1步，慢指针则可到达删除节点的前节点。
