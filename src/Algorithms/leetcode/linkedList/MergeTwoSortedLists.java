@@ -12,8 +12,8 @@ package Algorithms.leetcode.linkedList;
 public class MergeTwoSortedLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode head = new ListNode(0);
-        ListNode temp = head;
+        ListNode dummy = new ListNode(0);
+        ListNode temp = dummy;
         while (l1 != null && l2 != null) {
             if (l1.val < l2.val) {
                 temp.next = l1;
@@ -26,7 +26,7 @@ public class MergeTwoSortedLists {
             temp = temp.next;
         }
         temp.next = l1 == null ? l2 : l1;
-        return head.next;
+        return dummy.next;
     }
 
 }
