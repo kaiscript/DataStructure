@@ -17,6 +17,44 @@ package Algorithms.leetcode.linkedList;
 public class PalindromeLinkedList {
 
     public boolean isPalindrome(ListNode head) {
+        if (head == null || head.next == null) {
+            return true;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode slow = dummy;
+        ListNode fast = dummy;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        //找到后半个链表的起点
+        fast = slow.next;
+        slow.next = null;
+        //反转后半部分链表
+        ListNode pre = null;
+        while (fast != null) {
+            ListNode next = fast.next;
+            fast.next = pre;
+
+            pre = fast;
+            fast = next;
+        }
+        slow = dummy.next;
+        while (pre != null) {
+            if (pre.val != slow.val) {
+                return false;
+            }
+            pre = pre.next;
+            slow = slow.next;
+        }
+        return true;
+    }
+
+
+
+
+    public boolean isPalindrome0(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
         while (fast != null && fast.next != null) {
