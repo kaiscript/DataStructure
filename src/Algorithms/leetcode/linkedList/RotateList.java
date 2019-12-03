@@ -1,6 +1,8 @@
 package Algorithms.leetcode.linkedList;
 
 /**
+ * 61. Rotate List
+ * Medium
  * Given a linked list, rotate the list to the right by k places, where k is non-negative.
  *
  * Example 1:
@@ -22,8 +24,36 @@ package Algorithms.leetcode.linkedList;
  */
 public class RotateList {
 
-    //快指针指向头结点，前个指针指向空
+
     public ListNode rotateRight(ListNode head, int k) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(0);
+        ListNode slow = dummy;
+        ListNode fast = dummy;
+        dummy.next = head;
+        int length = 0;
+
+        while (fast != null && fast.next != null) {
+            length++;
+            fast = fast.next;
+        }
+        k = length - k % length;
+        for (int i = 0; i < k; i++) {
+            slow = slow.next;
+        }
+
+        fast.next = dummy.next;
+        dummy.next = slow.next;
+        slow.next = null;
+        return dummy.next;
+
+    }
+
+
+    //快指针指向头结点，前个指针指向空
+    public ListNode rotateRight0(ListNode head, int k) {
         if (head == null || head.next == null || k == 0) {
             return head;
         }

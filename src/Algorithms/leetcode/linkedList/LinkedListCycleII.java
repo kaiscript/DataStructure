@@ -13,6 +13,36 @@ package Algorithms.leetcode.linkedList;
  */
 public class LinkedListCycleII {
 
+
+    public ListNode detectCycle0(ListNode head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+        boolean ifExist = false;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                ifExist = true;
+                break;
+            }
+        }
+
+        if (ifExist) {
+            slow = head;
+            while (fast != null) {
+                if (fast == slow) {
+                    return slow;
+                }
+                slow = slow.next;
+                fast = fast.next;
+            }
+        }
+        return null;
+    }
+
     public ListNode detectCycle(ListNode head) {
         if (head == null || head.next == null) {
             return null;
