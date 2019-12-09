@@ -44,7 +44,7 @@ public class NumberOfIslands {
 
         grid[2][0] = '1';
         grid[2][1] = '1';
-        System.out.println(oi.numIslandsDfs(grid));
+        System.out.println(oi.numIslands(grid));
     }
 
     public int numIslandsDfs(char[][] grid) {
@@ -102,36 +102,36 @@ public class NumberOfIslands {
                 boolean add = false;
                 //not visited
                 if (visited[i][j] == 0) {
-                    visited[i][j] = 1;
+                    visited[i][j] = '1';
                     stack.add(new Mark(i, j));
                     while (!stack.empty()) {
                         Mark pop = stack.pop();
                         int x = pop.x;
                         int y = pop.y;
-                        if (grid[x][y] == 1) {
+                        if (grid[x][y] == '1') {
                             if (!add) {
                                 add = true;
                                 count++;
                             }
                             //right
-                            if (y + 1 < grid[i].length && visited[x][y + 1] == 0 && grid[x][y + 1] == 1) {
+                            if (y + 1 < grid[i].length && visited[x][y + 1] == 0 && grid[x][y + 1] == '1') {
                                 stack.add(new Mark(x, y + 1));
-                                visited[x][y + 1] = 1;
+                                visited[x][y + 1] = '1';
                             }
                             //bottom
-                            if (x + 1 < grid.length && visited[x + 1][y] == 0 && grid[x + 1][y] == 1) {
+                            if (x + 1 < grid.length && visited[x + 1][y] == 0 && grid[x + 1][y] == '1') {
                                 stack.add(new Mark(x + 1, y));
-                                visited[x + 1][y] = 1;
+                                visited[x + 1][y] = '1';
                             }
                             //left
-                            if (y - 1 >= 0 && visited[x][y - 1] == 0 && grid[x][y - 1] == 1) {
+                            if (y - 1 >= 0 && visited[x][y - 1] == 0 && grid[x][y - 1] == '1') {
                                 stack.add(new Mark(x, y - 1));
-                                visited[x][y - 1] = 1;
+                                visited[x][y - 1] = '1';
                             }
                             //up
-                            if (x - 1 >= 0 && visited[x - 1][y] == 0 && grid[x - 1][y] == 1) {
+                            if (x - 1 >= 0 && visited[x - 1][y] == 0 && grid[x - 1][y] == '1') {
                                 stack.add(new Mark(x - 1, y));
-                                visited[x - 1][y] = 1;
+                                visited[x - 1][y] = '1';
                             }
                         } else {
                             continue;
