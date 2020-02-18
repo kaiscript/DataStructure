@@ -92,4 +92,39 @@ public class MergeSort {
         }
     }
 
+
+    //递归的定义
+    public void sort1(int[] nums, int start, int end) {
+        int mid = start + (end - start) / 2;
+        sort1(nums, start, mid);
+        sort1(nums, mid + 1, end);
+        mergeSort1(nums, start, end, mid);
+    }
+
+    public void mergeSort1(int[] nums, int start, int end, int mid) {
+
+        int[] temp = new int[end - start + 1];
+        int i = start;
+        int j = mid + 1;
+        int k = 0;
+        while (i <= mid && j <= end) {
+            if (nums[i] > nums[j]) {
+                temp[k++] = nums[j];
+            }
+            else
+                temp[k++] = nums[i];
+        }
+        while (i <= mid) {
+            temp[k++] = nums[i++];
+        }
+        while (j <= end) {
+            temp[k++] = nums[j++];
+        }
+        for (k = 0; k < temp.length; k++) {
+            nums[start + k] = temp[k];
+        }
+
+    }
+
+
 }

@@ -15,7 +15,7 @@ public class QuickSort {
 
     public static void sort(int[] a) {
 //        quickSort(a, 0, a.length - 1);
-        quickSort0(a, 0, a.length - 1);
+        quickSort1(a, 0, a.length - 1);
     }
 
     public static void quickSort(int[] a, int l, int r) {
@@ -80,6 +80,34 @@ public class QuickSort {
         a[i] = pivot;
         quickSort0(a, start, i-1);
         quickSort0(a, i + 1, end);
+    }
+
+
+    public static void quickSort1(int[] nums, int start, int end) {
+        if (start >= end) {
+            return;
+        }
+        int i = start;
+        int j = end;
+        int pivot = nums[i];
+        while (i < j) {
+            while (i < j && nums[j] >= pivot) {
+                j--;
+            }
+            if (i < j) {
+                nums[i++] = nums[j];
+            }
+            while (i < j && nums[i] <= pivot) {
+                i++;
+            }
+            if (i < j) {
+                nums[j--] = nums[i];
+            }
+        }
+        nums[i] = pivot;
+        quickSort1(nums, start, i - 1);
+        quickSort1(nums, i + 1, end);
+
     }
 
 }
